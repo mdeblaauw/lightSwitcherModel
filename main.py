@@ -1,3 +1,3 @@
-from experiments.test_dataloader import bla
+from experiments.proto_net import ex
 
-bla()
+r = ex.run()

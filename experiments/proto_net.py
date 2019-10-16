@@ -10,11 +10,11 @@ from torch.optim import Adam
 from sacred import Experiment
 
 from experiments.core import prepare_nshot_task
+from experiments.core import categorical_accuracy
 from models.protonet import proto_net_episode
 from models.backbones.standard_backbone import get_backbone
 from dataLoader.data_iterator import SequenceDataset
 from dataLoader.task_sampler import NShotTaskSampler
-from config import PATH
 
 EXPERIMENT_NAME = 'prototypical networks experiment for voice verification'
 ex = Experiment(EXPERIMENT_NAME)
@@ -31,18 +31,18 @@ class ProtoTrainer():
         self.loss_fn = self.get_loss_fn()
     
     @ex.capture
-    def get_dataLoader(self, data_path, min_seq, max_seq, downsampling, episodes_per_epoch, n_train, k_train, q_train, test_episodes_per_epoch, n_test, k_test, q_test):
-        train_data = SequenceDataset(data_path, min_seq, max_seq, downsampling)
+    def get_dataLoader(self, min_seq, max_seq, downsampling, episodes_per_epoch, n_train, k_train, q_train, test_episodes_per_epoch, n_test, k_test, q_test):
+        train_data = SequenceDataset(min_seq, max_seq, downsampling, 'train')
         train_taskloader = DataLoader(
             train_data,
             batch_sampler = NShotTaskSampler(train_data, episodes_per_epoch, n_train, k_train, q_train),
             num_workers = 4
         )
 
-        test_data = SequenceDataset(data_path, min_seq, max_seq, downsampling)
+        test_data = SequenceDataset(min_seq, max_seq, downsampling, 'test')
         test_taskloader = DataLoader(
             train_data,
-            batch_sampler = NShotTaskSampler(test_data, episodes_per_epoch, n_test, k_test, q_test),
+            batch_sampler = NShotTaskSampler(test_data, test_episodes_per_epoch, n_test, k_test, q_test),
             num_workers = 4
         )
         return(train_taskloader, test_taskloader)
@@ -64,12 +64,11 @@ class ProtoTrainer():
         return(torch.nn.NLLLoss())
 
     @ex.capture
-    def train(self, epochs, n_train,k_train, q_train, n_test, k_test, q_test, distance, final_evaluation_episodes, test_episodes_per_epoch):
+    def train(self, epochs, n_train,k_train, q_train, episodes_per_epoch , n_test, k_test, q_test, distance, final_test_episodes, test_episodes_per_epoch, save_model ,_run):
         for epoch in range(1, epochs+1):
             train_accuracy = []
             test_accuracy = []
-
-            self.scheduler.step()
+            loss_train = []
 
             for batch in self.train_taskloader:
                 def handle_trainbatch():
@@ -82,10 +81,13 @@ class ProtoTrainer():
 
                     train_acc = categorical_accuracy(y, y_pred)
                     train_accuracy.append(train_acc)
+                    loss_train.append(loss)
 
                 handle_trainbatch()
                 if torch.cuda.is_available():
                     torch.cuda.synchronize()
+
+            self.scheduler.step()
 
             for batch in self.test_taskloader:
                 def handle_testbatch():
@@ -100,10 +102,10 @@ class ProtoTrainer():
                         test_acc = categorical_accuracy(y, y_pred)
                         test_accuracy.append(test_acc)
 
-                handle_trainbatch()
+                handle_testbatch()
 
             acc_train = sum(train_accuracy)/episodes_per_epoch
-            acc_test = sum(test_accuracy)/evaluation_episodes
+            acc_test = sum(test_accuracy)/test_episodes_per_epoch
             metric_loss = sum(loss_train)/episodes_per_epoch
             _run.log_scalar('train accuracy', acc_train)
             _run.log_scalar('test accuracy', acc_test)
@@ -114,7 +116,7 @@ class ProtoTrainer():
             print('Loss train:', metric_loss)
 
         final_test_accuracy = []
-        NUM_TEST_POINTS = int(final_evaluation_episodes/test_episodes_per_epoch)
+        NUM_TEST_POINTS = int(final_test_episodes/test_episodes_per_epoch)
         for _ in range(NUM_TEST_POINTS):    
             for batch in self.test_taskloader:
                 with torch.no_grad():
@@ -131,7 +133,7 @@ class ProtoTrainer():
         metaval_accuracies = np.array(final_test_accuracy)
         means = np.mean(metaval_accuracies, 0)
         stds = np.std(metaval_accuracies, 0)
-        ci95 = 1.96*stds/np.sqrt(final_evaluation_episodes)
+        ci95 = 1.96*stds/np.sqrt(final_test_episodes)
         _run.log_scalar('final mean accuracy', means)
         _run.log_scalar('final std accuracy', stds)
         _run.log_scalar('final CI95 accuracy', ci95)
@@ -154,11 +156,11 @@ def config():
     k_test = 5
     q_test = 5
 
-    episodes_per_epoch = 100
-    test_episodes_per_epoch = 100
-    final_test_episodes = 100
+    episodes_per_epoch = 10
+    test_episodes_per_epoch = 10
+    final_test_episodes = 10
 
-    epochs = 100
+    epochs = 2
     learning_rate = 0.001
     step_size = 20
     gamma = 0.5
@@ -166,9 +168,6 @@ def config():
     min_seq = 1
     max_seq = 3
     downsampling = 4
-
-    #TODO
-    data_path = 'bla'
 
     save_model = False
     save_model_file = 'model.pt'

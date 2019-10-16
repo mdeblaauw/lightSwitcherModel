@@ -112,4 +112,4 @@ def proto_net_episode(model,optimiser,loss_fn,x,y,n_shot,k_way,q_queries,distanc
     else:
         pass
 
-    return loss, y_pred
+    return loss.detach().numpy(), y_pred

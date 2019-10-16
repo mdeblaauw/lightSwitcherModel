@@ -7,14 +7,15 @@ import pandas as pd
 import torch
 import torchaudio
 from torch.utils.data import Dataset
+from config import DATA_PATH
 
 class SequenceDataset(Dataset):
-    def __init__(self, path, min_seq, max_seq, downsampling):
+    def __init__(self, min_seq, max_seq, downsampling, subset):
         self.min_seq = min_seq
         self.max_seq = max_seq
         self.downsampling = downsampling
         
-        self.df = pd.DataFrame(self.index_subset(path))
+        self.df = pd.DataFrame(self.index_subset(subset))
 
         # Index of dataframe has direct correspondence to item in dataset
         self.df = self.df.assign(id=self.df.index.values)
@@ -55,7 +56,8 @@ class SequenceDataset(Dataset):
         return(len(self.df['class_name'].unique()))
     
     @staticmethod
-    def index_subset(path):
+    def index_subset(subset):
+        path = os.path.join(DATA_PATH, subset)
         samples = []
         for root, folders, files in os.walk(path):
             if not files:
