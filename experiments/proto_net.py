@@ -156,11 +156,11 @@ def config():
     k_test = 5
     q_test = 5
 
-    episodes_per_epoch = 10
-    test_episodes_per_epoch = 10
-    final_test_episodes = 10
+    episodes_per_epoch = 100
+    test_episodes_per_epoch = 100
+    final_test_episodes = 500
 
-    epochs = 2
+    epochs = 100
     learning_rate = 0.001
     step_size = 20
     gamma = 0.5
@@ -169,7 +169,7 @@ def config():
     max_seq = 3
     downsampling = 4
 
-    save_model = False
+    save_model = True
     save_model_file = 'model.pt'
 
 @ex.automain
