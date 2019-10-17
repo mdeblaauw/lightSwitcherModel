@@ -156,7 +156,7 @@ def config():
     k_test = 5
     q_test = 5
 
-    episodes_per_epoch = 2
+    episodes_per_epoch = 3
     test_episodes_per_epoch = 2
     final_test_episodes = 2
 
