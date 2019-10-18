@@ -1,5 +1,7 @@
 # lightSwitcherModel
 
+This repository is a setup to do experiments into voice verification/voice authentication/speaker recognition.
+
 ## Instructions
 
 ### Requirements
@@ -26,7 +28,7 @@ Get training data from here: <http://www.openslr.org/12>.
 * train-clean-360.tar.gz
 * dev-clean.tar.gz
 
-The train zips function as training data and the dev zip as test data.
+The train-zips function as training data and the dev zip as test data.
 
 Place the unzipped training data into the `data\` folder such that the file structure is as follows:
 
