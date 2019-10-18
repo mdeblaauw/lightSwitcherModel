@@ -11,4 +11,5 @@
 /lightSwitchModel
 /data
 
+#mongodb credential file
 mongodb_setup.txt
