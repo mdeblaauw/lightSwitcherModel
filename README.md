@@ -1,6 +1,6 @@
 # lightSwitcherModel
 
-This repository is a setup to do experiments into voice verification/voice authentication/speaker recognition.
+This repository is a setup to do experiments into voice verification using deep meta-learning and, especially deep metric-learning models. The experiments are automatically organised with [Sacred](https://github.com/IDSIA/sacred) and visualised with [Omniboard](https://github.com/vivekratnavel/omniboard).
 
 ## Instructions
 
@@ -46,3 +46,7 @@ train_speakers is: 2682                                                         
 train samples is: 132501                                                                                                 │
 test_speakers is: 97                                                                                                     │
 test_samples is : 2682  
+
+### Omniboard
+
+To visualise the experiments stored in MongoDB you can use Omniboard. A quickstart installation can be found at <https://github.com/vivekratnavel/omniboard/blob/master/docs/quick-start.md>.
