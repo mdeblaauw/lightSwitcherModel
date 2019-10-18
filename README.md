@@ -3,11 +3,24 @@
 ## Instructions
 
 ### Requirements
-Make a new venv and install requirements from `requirements.txt`
+MongoDB Atlas is used to store experimental results. Hence, a requirement is to set this up at <https://cloud.mongodb.com>:
+
+1. Make a cluster and a database in the cluster.
+2. Get a connection string with 'Connect to your application'.
+3. Replace the connection string url and database name in `main.py`.
+4. Place the login credentials in a self-created `mongodb_setup.txt` file. The structure of this file is presented below. Finally, place the file in the root folder.
+
+`Mongodb_setup.txt` file structure:
+```
+username=<username>
+password=<password>
+```
+
+Make a new venv and install requirements from `requirements.txt`. Make sure that the Pytorch version in `requirements.txt` is compatible with your CUDA version if you want to use GPU(s).
 
 ### Data
 
-Get training data from here: <http://www.openslr.org/12>
+Get training data from here: <http://www.openslr.org/12>.
 
 * train-clean-100.tar.gz
 * train-clean-360.tar.gz
