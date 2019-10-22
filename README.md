@@ -21,6 +21,45 @@ password=<password>
 Make a new venv and install requirements from `requirements.txt`. Make sure that the Pytorch version in `requirements.txt` is compatible with your CUDA version if you want to use GPU(s).
 
 ### Data
+There are two data sources from which you can do experiments: VoxCeleb or LibriSpeech.
+
+#### VoxCeleb
+To use the VoxCeleb data, we use Voxceleb2 as train set and Voxceleb1 as test set.
+
+Get the training data from here: [VoxCeleb](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/).
+
+Place the unzipped data into a `data\VoxCeleb` folder such that the file structure is as follows:
+
+```
+data/
+    VoxCeleb/
+        prepared_data/
+            train/
+                aac/
+            test/
+                wav/
+```
+
+The VoxCeleb2 data is formatted in m4a which can, at the moment, not be handled by torchaudio. So you can use the following command to recursively convert the files to WAV format. Note: this can take a while.
+
+```
+#!/bin/bash
+  
+for i in $(find . -type f); do
+    ext="${i##*.}"
+    if [[ $ext = m4a ]]
+    then
+        p=${i%".m4a"}
+        echo $i 
+        ffmpeg -v 0  -i $i $p'.wav' </dev/null > /dev/null 2>&1 &
+    fi
+done
+```
+
+To use the VoxCeleb data in experiments, change the `DATA_PATH` variable in `config.py` to `'data/VoxCeleb/prepared_data'`.
+
+#### LibriSpeech
+TODO: change prepare_data.py such that data_iterator can handle both VoxCeleb and LibriSpeech.
 
 Get training data from here: <http://www.openslr.org/12>.
 
