@@ -1,6 +1,6 @@
 # lightSwitcherModel
 
-This repository is a setup to do experiments into voice verification using deep meta-learning and, especially deep metric-learning models. The experiments are automatically organised with [Sacred](https://github.com/IDSIA/sacred) and visualised with [Omniboard](https://github.com/vivekratnavel/omniboard). The goal of these experiments is to create a voice verification model that can be used to verify users of a voice assistant application. At this moment, a voice assistant PoC is created and visible in this [repo](https://github.com/mdeblaauw/lightSwitcher).
+This repository is a setup to do experiments into voice verification using deep meta-learning and, especially deep metric-learning models. you can do experiments that are automatically organised with [Sacred](https://github.com/IDSIA/sacred) and visualised with [Omniboard](https://github.com/vivekratnavel/omniboard). The goal of these experiments is to create a voice verification model that can be used to verify users of a voice assistant application. At this moment, a voice assistant PoC is created and visible in this [repo](https://github.com/mdeblaauw/lightSwitcher).
 
 ## Instructions
 
@@ -82,3 +82,6 @@ test_samples is : 2682
 ### Omniboard
 
 To visualise the experiments stored in MongoDB you can use Omniboard. A quickstart installation can be found at <https://github.com/vivekratnavel/omniboard/blob/master/docs/quick-start.md>.
+
+### Run experiments
+TODO
