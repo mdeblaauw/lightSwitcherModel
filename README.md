@@ -40,9 +40,7 @@ data/
                 wav/
 ```
 
-Then run the `m4atowav.py` to convert m4a audio files to wav files. This will increase the file size to 270GB and  
-
-The VoxCeleb2 data is formatted in m4a which can, at the moment, not be handled by torchaudio. So you can use the `m4atowav.py` script to convert the files to WAV format. Note: this can take a while.
+The VoxCeleb2 data is formatted in m4a which can, at the moment, not be handled by torchaudio. So you can use the `m4atowav.sh` script to convert the files to WAV format. Note: this can take a while and the data will increase from approximately 80GB to 270GB. The `m4atowav.sh` script first convert all m4a files to WAV and then removes the m4a audio files.
 
 Finally, to use the VoxCeleb data in experiments, change the `DATA_PATH` variable in `config.py` to `'data/VoxCeleb/prepared_data'`.
 
