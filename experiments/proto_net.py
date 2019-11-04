@@ -49,7 +49,7 @@ class ProtoTrainer():
 
     @ex.capture
     def get_model(self):
-        return(get_backbone(input="1d", kernel=32, pad=0)) 
+        return(get_backbone(input="1d", kernel=32, pad=0).to(device, dtype=torch.float)) 
 
     @ex.capture
     def get_optimizer(self, learning_rate):
@@ -64,7 +64,7 @@ class ProtoTrainer():
         return(torch.nn.NLLLoss())
 
     @ex.capture
-    def train(self, epochs, n_train,k_train, q_train, episodes_per_epoch , n_test, k_test, q_test, distance, final_test_episodes, test_episodes_per_epoch, save_model ,_run):
+    def train(self, epochs, n_train,k_train, q_train, episodes_per_epoch , n_test, k_test, q_test, distance, final_test_episodes, test_episodes_per_epoch, save_model, save_model_file ,_run):
         for epoch in range(1, epochs+1):
             train_accuracy = []
             test_accuracy = []
@@ -156,11 +156,11 @@ def config():
     k_test = 5
     q_test = 5
 
-    episodes_per_epoch = 100
-    test_episodes_per_epoch = 100
-    final_test_episodes = 500
+    episodes_per_epoch = 3
+    test_episodes_per_epoch = 2
+    final_test_episodes = 2
 
-    epochs = 100
+    epochs = 2
     learning_rate = 0.001
     step_size = 20
     gamma = 0.5
@@ -169,7 +169,7 @@ def config():
     max_seq = 3
     downsampling = 4
 
-    save_model = True
+    save_model = False
     save_model_file = 'model.pt'
 
 @ex.automain
