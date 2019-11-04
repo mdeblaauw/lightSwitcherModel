@@ -26,7 +26,7 @@ There are two data sources from which you can do experiments: VoxCeleb or LibriS
 #### VoxCeleb
 To use the VoxCeleb data, we use Voxceleb2 as train set and Voxceleb1 as test set.
 
-Get the training data from here: [VoxCeleb](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/).
+Get the training data from here: [VoxCeleb](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/). Example, use `curl -O -u <username> <link file>'` for mac or use wget for Linux. The username and password can be requisted from the authors of VoxCeleb.
 
 Place the unzipped data into a `data\VoxCeleb` folder such that the file structure is as follows:
 
@@ -40,23 +40,11 @@ data/
                 wav/
 ```
 
-The VoxCeleb2 data is formatted in m4a which can, at the moment, not be handled by torchaudio. So you can use the following command to recursively convert the files to WAV format. Note: this can take a while.
+Then run the `m4atowav.py` to convert m4a audio files to wav files. This will increase the file size to 270GB and  
 
-```
-#!/bin/bash
-  
-for i in $(find . -type f); do
-    ext="${i##*.}"
-    if [[ $ext = m4a ]]
-    then
-        p=${i%".m4a"}
-        echo $i 
-        ffmpeg -v 0  -i $i $p'.wav' </dev/null > /dev/null 2>&1 &
-    fi
-done
-```
+The VoxCeleb2 data is formatted in m4a which can, at the moment, not be handled by torchaudio. So you can use the `m4atowav.py` script to convert the files to WAV format. Note: this can take a while.
 
-To use the VoxCeleb data in experiments, change the `DATA_PATH` variable in `config.py` to `'data/VoxCeleb/prepared_data'`.
+Finally, to use the VoxCeleb data in experiments, change the `DATA_PATH` variable in `config.py` to `'data/VoxCeleb/prepared_data'`.
 
 #### LibriSpeech
 TODO: change prepare_data.py such that data_iterator can handle both VoxCeleb and LibriSpeech.
