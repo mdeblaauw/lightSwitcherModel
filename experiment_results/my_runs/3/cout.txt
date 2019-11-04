@@ -1,0 +1,26 @@
+INFO - prototypical networks experiment for voice verification - Running command 'main'
+INFO - prototypical networks experiment for voice verification - Started run with ID "3"
+Epochs: 1
+Train accuracy: 0.176
+Test accuracy: 0.168
+Loss train: 23.280116176605226
+Epochs: 2
+Train accuracy: 0.22400000000000003
+Test accuracy: 0.28
+Loss train: 6.684016990661621
+Epochs: 3
+Train accuracy: 0.20800000000000002
+Test accuracy: 0.272
+Loss train: 7.413773441314698
+Epochs: 4
+Train accuracy: 0.2
+Test accuracy: 0.248
+Loss train: 5.101792478561402
+Epochs: 5
+Train accuracy: 0.312
+Test accuracy: 0.33599999999999997
+Loss train: 3.3747084617614744
+final mean accuracy: 0.23200000000000004
+final std accuracy: 0.046647615158762416
+final CI95: 0.04088843748543102
+INFO - prototypical networks experiment for voice verification - Completed after 0:00:48

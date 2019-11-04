@@ -2,7 +2,7 @@ import os
 import argparse
 
 from experiments.proto_net import ex
-from sacred.observers import FileStorageObserver
+from sacred.observers import MongoObserver
 
 added_source_files = ['models/', 'models/backbones/', 'dataLoader/']
 
@@ -10,6 +10,22 @@ for folder in added_source_files:
     for file in os.listdir(folder):
         if file.split('.')[-1] == 'py':
             ex.add_source_file(filename=os.path.join(folder, file))
+
+with open('mongodb_setup.txt', 'r') as f:
+    try:
+        x = f.read().splitlines() 
+    except IOError:
+        print("Could not read mongodb_setup file")
+        sys.exit()
+
+login = [i.split('=')[-1] for i in x]
+
+ex.observers.append(MongoObserver.create(
+    url = 'mongodb+srv://{}:{}@cluster0-a1qml.mongodb.net/test?retryWrites=true&w=majority'.format(login[0], login[1]),
+    db_name = 'test'
+))
+
+ex.observers.append(FileStorageObserver('experiment_results/my_runs'))
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--distance", default="l2", help="sets distance")
@@ -22,6 +38,7 @@ parser.add_argument("--q_test", default=5, type=int)
 parser.add_argument("--train_episodes", default=100, type=int)
 parser.add_argument("--test_episodes", default=100, type=int)
 parser.add_argument("--final_episodes", default=500, type=int)
+parser.add_argument("--epochs", default=100, type=int)
 parser.add_argument("--lr", default=0.001, type=float)
 parser.add_argument("--step_size", default=20, type=int)
 parser.add_argument("--gamma", default=500, type=float)
@@ -31,11 +48,8 @@ parser.add_argument("--downsampling", default=4, type=int)
 parser.add_argument("--num_epochs", default=100, type=int)
 parser.add_argument("--save_model", help="saves the model", action="store_true")
 parser.add_argument("--file_name", default="model.pt", help="name of the saved model")
-parser.add_argument("--exp_name", default="my_run", help="name of experiment")
 
 args = parser.parse_args()
-
-ex.observers.append(FileStorageObserver('experiment_results/' + args.exp_name))
 
 r = ex.run(config_updates={
     'distance':args.distance, 

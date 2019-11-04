@@ -30,7 +30,7 @@ class SequenceDataset(Dataset):
         self.datasetid_to_class_id = self.df.to_dict()['class_id']
         
     def __getitem__(self, item):
-        # print(self.datasetid_to_filepath[item])
+        print(self.datasetid_to_filepath[item])
         sample, samplerate = torchaudio.load(self.datasetid_to_filepath[item])
 
         #random sequence length between min and max length

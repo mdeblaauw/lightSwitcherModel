@@ -5,7 +5,9 @@ This repository is a setup to do experiments into voice verification using deep 
 ## Instructions
 
 ### Requirements
-MongoDB Atlas is used to store experimental results. Hence, a requirement is to set this up at <https://cloud.mongodb.com>:
+
+#### MongoDB Atlas
+You can also use MongoDB Atlas to store experimental results. A requirement is then to set this up at <https://cloud.mongodb.com>:
 
 1. Make a cluster and a database in the cluster.
 2. Get a connection string with 'Connect to your application'.
@@ -18,6 +20,11 @@ username=<username>
 password=<password>
 ```
 
+The `main_mongo.py` script runs experiments using MongoDB Atlas. So, you should run this when you use MongoDB Atlas.
+
+Whenever you do not use MongoDB, the experimental results are stored locally in the `experiment_results`. You do need to run the `main.py` to do this.
+
+#### Install Python requirements
 Make a new venv and install requirements from `requirements.txt`. Make sure that the Pytorch version in `requirements.txt` is compatible with your CUDA version if you want to use GPU(s).
 
 ### Data

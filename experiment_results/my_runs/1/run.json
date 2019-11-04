@@ -1,0 +1,132 @@
+{
+  "artifacts": [],
+  "command": "main",
+  "experiment": {
+    "base_dir": "/Users/mdeblaauw/Desktop/lightSwitcherModel/experiments",
+    "dependencies": [
+      "numpy==1.17.2",
+      "sacred==0.8.0",
+      "torch==1.2.0"
+    ],
+    "mainfile": "proto_net.py",
+    "name": "prototypical networks experiment for voice verification",
+    "repositories": [
+      {
+        "commit": "e29a5bbb7db8a7401d836db181e69e12b49e6635",
+        "dirty": true,
+        "url": "https://github.com/mdeblaauw/lightSwitcherModel.git"
+      },
+      {
+        "commit": "e29a5bbb7db8a7401d836db181e69e12b49e6635",
+        "dirty": true,
+        "url": "https://github.com/mdeblaauw/lightSwitcherModel.git"
+      },
+      {
+        "commit": "e29a5bbb7db8a7401d836db181e69e12b49e6635",
+        "dirty": true,
+        "url": "https://github.com/mdeblaauw/lightSwitcherModel.git"
+      },
+      {
+        "commit": "e29a5bbb7db8a7401d836db181e69e12b49e6635",
+        "dirty": true,
+        "url": "https://github.com/mdeblaauw/lightSwitcherModel.git"
+      },
+      {
+        "commit": "e29a5bbb7db8a7401d836db181e69e12b49e6635",
+        "dirty": true,
+        "url": "https://github.com/mdeblaauw/lightSwitcherModel.git"
+      },
+      {
+        "commit": "e29a5bbb7db8a7401d836db181e69e12b49e6635",
+        "dirty": true,
+        "url": "https://github.com/mdeblaauw/lightSwitcherModel.git"
+      }
+    ],
+    "sources": [
+      [
+        "../dataLoader/data_iterator.py",
+        "_sources/data_iterator_a8ba7a89e18cfaf3843791808e91ea28.py"
+      ],
+      [
+        "../dataLoader/task_sampler.py",
+        "_sources/task_sampler_2cb2c4a769be22380b2639c899bfc88a.py"
+      ],
+      [
+        "core.py",
+        "_sources/core_d02eb790685bdf88bf36d9a1cdb6d95d.py"
+      ],
+      [
+        "proto_net.py",
+        "_sources/proto_net_48b79376fcfa6ef95a6a96005d6c6050.py"
+      ],
+      [
+        "../models/backbones/standard_backbone.py",
+        "_sources/standard_backbone_0dc36aa134d84dcc20aab35e7148b0e1.py"
+      ],
+      [
+        "../models/protonet.py",
+        "_sources/protonet_8bdfb50b4682d7b56415cbc99a12ce5e.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"/Users/mdeblaauw/Desktop/lightSwitcherModel/lightSwitchModel/lib/python3.6/site-packages/sacred/stdout_capturing.py\", line 163, in tee_output_fd\n    yield out  # let the caller do their printing\n",
+    "  File \"/Users/mdeblaauw/Desktop/lightSwitcherModel/lightSwitchModel/lib/python3.6/site-packages/sacred/run.py\", line 238, in __call__\n    self.result = self.main_function(*args)\n",
+    "  File \"/Users/mdeblaauw/Desktop/lightSwitcherModel/lightSwitchModel/lib/python3.6/site-packages/sacred/config/captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"/Users/mdeblaauw/Desktop/lightSwitcherModel/experiments/proto_net.py\", line 185, in main\n    trainer.train()\n",
+    "  File \"/Users/mdeblaauw/Desktop/lightSwitcherModel/lightSwitchModel/lib/python3.6/site-packages/sacred/config/captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"/Users/mdeblaauw/Desktop/lightSwitcherModel/experiments/proto_net.py\", line 86, in train\n    handle_trainbatch()\n",
+    "  File \"/Users/mdeblaauw/Desktop/lightSwitcherModel/experiments/proto_net.py\", line 80, in handle_trainbatch\n    loss, y_pred = proto_net_episode(self.model,self.optimizer,self.loss_fn,x,y,n_train,k_train,q_train,distance,True)\n",
+    "  File \"/Users/mdeblaauw/Desktop/lightSwitcherModel/models/protonet.py\", line 110, in proto_net_episode\n    loss.backward()\n",
+    "  File \"/Users/mdeblaauw/Desktop/lightSwitcherModel/lightSwitchModel/lib/python3.6/site-packages/torch/tensor.py\", line 118, in backward\n    torch.autograd.backward(self, gradient, retain_graph, create_graph)\n",
+    "  File \"/Users/mdeblaauw/Desktop/lightSwitcherModel/lightSwitchModel/lib/python3.6/site-packages/torch/autograd/__init__.py\", line 93, in backward\n    allow_unreachable=True)  # allow_unreachable flag\n",
+    "KeyboardInterrupt\n",
+    "\nDuring handling of the above exception, another exception occurred:\n\n",
+    "Traceback (most recent call last):\n",
+    "  File \"/Users/mdeblaauw/anaconda3/lib/python3.6/contextlib.py\", line 99, in __exit__\n    self.gen.throw(type, value, traceback)\n",
+    "  File \"/Users/mdeblaauw/Desktop/lightSwitcherModel/lightSwitchModel/lib/python3.6/site-packages/sacred/stdout_capturing.py\", line 176, in tee_output_fd\n    tee_stderr.wait(timeout=1)\n",
+    "  File \"/Users/mdeblaauw/anaconda3/lib/python3.6/subprocess.py\", line 1469, in wait\n    raise TimeoutExpired(self.args, timeout)\n",
+    "subprocess.TimeoutExpired: Command '['tee', '-a', '/var/folders/dg/tx0l02xs0zd7f24fkfjyxc340000gn/T/tmp7ekc38xk']' timed out after 1 seconds\n"
+  ],
+  "heartbeat": "2019-11-04T13:54:47.371468",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Core(TM) i7-4980HQ CPU @ 2.80GHz",
+    "hostname": "AMSmdeblaauwD3G3QP",
+    "os": [
+      "Darwin",
+      "Darwin-18.7.0-x86_64-i386-64bit"
+    ],
+    "python_version": "3.6.8"
+  },
+  "meta": {
+    "command": "main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserve": false
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2019-11-04T13:54:06.558270",
+  "status": "FAILED",
+  "stop_time": "2019-11-04T13:54:47.375247"
+}
