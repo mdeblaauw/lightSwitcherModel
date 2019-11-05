@@ -10,8 +10,8 @@ from torch.utils.data import Dataset
 from config import DATA_PATH
 
 class SequenceDataset(Dataset):
-    def __init__(self, min_seq, max_seq, downsampling, subset, seq=False):
-        self.sequence = seq
+    def __init__(self, min_seq, max_seq, downsampling, subset, spectrogram=False):
+        self.spectrogram = spectrogram
         self.min_seq = min_seq
         self.max_seq = max_seq
         self.downsampling = downsampling
@@ -45,11 +45,11 @@ class SequenceDataset(Dataset):
         padding = torch.zeros(self.max_seq*samplerate - sample.shape[-1]).unsqueeze(0)
         sample = torch.cat((sample,padding),1)
 
-        if self.sequence:
+        if self.spectrogram:
+            sample = torchaudio.transforms.Spectrogram(n_fft=255, hop_length=160)(sample)
+        else:
             #downsample kHz
             sample = sample[:,::self.downsampling]
-        else:
-            sample = torchaudio.transforms.Spectrogram(n_fft=255, hop_length=160)(sample)
 
         label = self.datasetid_to_class_id[item]
         return(sample,label)

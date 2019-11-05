@@ -32,13 +32,13 @@ parser.add_argument("--num_epochs", default=100, type=int)
 parser.add_argument("--save_model", help="saves the model", action="store_true")
 parser.add_argument("--file_name", default="model.pt", help="name of the saved model")
 parser.add_argument("--exp_name", default="my_run", help="name of experiment")
-parser.add_argument("--sequence", help="decides which model to run", action="store_true")
+parser.add_argument("--spectrogram", help="decides which model to run", action="store_true")
 
 args = parser.parse_args()
 
 ex.observers.append(FileStorageObserver('experiment_results/' + args.exp_name))
 
-print(args.sequence)
+print(args.spectrogram)
 
 r = ex.run(config_updates={
     'distance':args.distance, 
@@ -60,4 +60,4 @@ r = ex.run(config_updates={
     'downsampling':args.downsampling,
     'save_model':args.save_model,
     'save_model_file':args.file_name,
-    'seq':args.sequence})
+    'spectrogram':args.spectrogram})
