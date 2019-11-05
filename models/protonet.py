@@ -86,7 +86,6 @@ def proto_net_episode(model,optimiser,loss_fn,x,y,n_shot,k_way,q_queries,distanc
 
     # Embed all samples
     embeddings = model(x)
-    
     # Samples are ordered by the NShotWrapper class as follows:
     # k lots of n support samples from a particular class
     # k lots of q query samples from those classes
