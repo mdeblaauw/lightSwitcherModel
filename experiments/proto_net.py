@@ -13,6 +13,7 @@ from experiments.core import prepare_nshot_task
 from experiments.core import categorical_accuracy
 from models.protonet import proto_net_episode
 from models.backbones.standard_backbone import get_backbone
+from models.backbones.resnet_backbone import ResNet18
 from dataLoader.data_iterator import SequenceDataset
 from dataLoader.task_sampler import NShotTaskSampler
 
@@ -31,25 +32,28 @@ class ProtoTrainer():
         self.loss_fn = self.get_loss_fn()
     
     @ex.capture
-    def get_dataLoader(self, min_seq, max_seq, downsampling, episodes_per_epoch, n_train, k_train, q_train, test_episodes_per_epoch, n_test, k_test, q_test):
-        train_data = SequenceDataset(min_seq, max_seq, downsampling, 'train')
+    def get_dataLoader(self, min_seq, max_seq, downsampling, episodes_per_epoch, n_train, k_train, q_train, test_episodes_per_epoch, n_test, k_test, q_test, spectrogram):
+        train_data = SequenceDataset(min_seq, max_seq, downsampling, 'train', spectrogram)
         train_taskloader = DataLoader(
             train_data,
             batch_sampler = NShotTaskSampler(train_data, episodes_per_epoch, n_train, k_train, q_train),
-            num_workers = 4
+            num_workers = 0
         )
 
-        test_data = SequenceDataset(min_seq, max_seq, downsampling, 'test')
+        test_data = SequenceDataset(min_seq, max_seq, downsampling, 'test', spectrogram)
         test_taskloader = DataLoader(
             train_data,
             batch_sampler = NShotTaskSampler(test_data, test_episodes_per_epoch, n_test, k_test, q_test),
-            num_workers = 4
+            num_workers = 0
         )
         return(train_taskloader, test_taskloader)
 
     @ex.capture
-    def get_model(self):
-        return(get_backbone(input="1d", kernel=32, pad=0).to(device, dtype=torch.float)) 
+    def get_model(self, spectrogram):
+        if spectrogram:
+            return(ResNet18().to(device, dtype=torch.float))
+        else:
+            return(get_backbone(input="1d", kernel=32, pad=0).to(device, dtype=torch.float)) 
 
     @ex.capture
     def get_optimizer(self, learning_rate):
@@ -168,6 +172,7 @@ def config():
     min_seq = 1
     max_seq = 3
     downsampling = 4
+    spectrogram = False
 
     save_model = False
     save_model_file = 'model.pt'

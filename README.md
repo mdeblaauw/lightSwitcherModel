@@ -2,6 +2,11 @@
 
 This repository is a setup to do experiments into voice verification using deep meta-learning and, especially deep metric-learning models. you can do experiments that are automatically organised with [Sacred](https://github.com/IDSIA/sacred) and visualised with [Omniboard](https://github.com/vivekratnavel/omniboard). The goal of these experiments is to create a voice verification model that can be used to verify users of a voice assistant application. At this moment, a voice assistant PoC is created and visible in this [repo](https://github.com/mdeblaauw/lightSwitcher).
 
+Note: 
+
+1. After upgrade Pytorch to v1.2.1, the multiprocess function does not work. This Pytorch version is needed otherwise the spectrogram functionality in torchaudio does not function correctly.
+2. Using spectrogram, we padd with zero to have the same dimensions per batch. In <https://arxiv.org/pdf/1806.05622.pdf> and <https://arxiv.org/pdf/1904.08775.pdf> they do not do this and use adaptive global pooling. However, Pytorch cannot handle different dimension sizes per batch. Questions and answers to look into this into the feauture are found here [link](https://discuss.pytorch.org/t/how-to-create-a-dataloader-with-variable-size-input/8278/10).
+
 ## Instructions
 
 ### Requirements
