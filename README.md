@@ -32,6 +32,13 @@ Whenever you do not use MongoDB, the experimental results are stored locally in 
 #### Install Python requirements
 Make a new venv and install requirements from `requirements.txt`. Make sure that the Pytorch version in `requirements.txt` is compatible with your CUDA version if you want to use GPU(s).
 
+#### Using a Linux EC2 instance on AWS
+It could be that, while installing Sacred, a ascii code error occurs. If it does, then try the next commands:
+```
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+```
+
 ### Data
 There are two data sources from which you can do experiments: VoxCeleb or LibriSpeech.
 
