@@ -37,14 +37,14 @@ class ProtoTrainer():
         train_taskloader = DataLoader(
             train_data,
             batch_sampler = NShotTaskSampler(train_data, episodes_per_epoch, n_train, k_train, q_train),
-            num_workers = 0
+            num_workers = 4
         )
 
         test_data = SequenceDataset(min_seq, max_seq, downsampling, 'test', spectrogram)
         test_taskloader = DataLoader(
             train_data,
             batch_sampler = NShotTaskSampler(test_data, test_episodes_per_epoch, n_test, k_test, q_test),
-            num_workers = 0
+            num_workers = 4
         )
         return(train_taskloader, test_taskloader)
 
@@ -160,9 +160,9 @@ def config():
     k_test = 5
     q_test = 5
 
-    episodes_per_epoch = 3
-    test_episodes_per_epoch = 2
-    final_test_episodes = 2
+    episodes_per_epoch = 100
+    test_episodes_per_epoch = 50
+    final_test_episodes = 500
 
     epochs = 2
     learning_rate = 0.001
