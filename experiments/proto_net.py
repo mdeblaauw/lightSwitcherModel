@@ -40,14 +40,14 @@ class ProtoTrainer():
         train_taskloader = DataLoader(
             train_data,
             batch_sampler = NShotTaskSampler(train_data, episodes_per_epoch, n_train, k_train, q_train),
-            num_workers = 0
+            num_workers = 10
         )
 
         test_data = SequenceDataset(min_seq, max_seq, downsampling, 'test', spectrogram)
         test_taskloader = DataLoader(
             train_data,
             batch_sampler = NShotTaskSampler(test_data, test_episodes_per_epoch, n_test, k_test, q_test),
-            num_workers = 0
+            num_workers = 10
         )
         return(train_taskloader, test_taskloader)
 
