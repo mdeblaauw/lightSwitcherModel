@@ -46,9 +46,7 @@ class SequenceDataset(Dataset):
         padding = torch.zeros(self.max_seq*samplerate - sample.shape[-1]).unsqueeze(0)
         sample = torch.cat((sample,padding),1)
 
-        if self.spectrogram:
-            sample = torchaudio.transforms.Spectrogram(n_fft=255, hop_length=160)(sample)
-        else:
+        if not self.spectrogram:
             #downsample kHz
             sample = sample[:,::self.downsampling]
 
