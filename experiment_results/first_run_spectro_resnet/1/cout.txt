@@ -1,0 +1,2 @@
+INFO - prototypical networks experiment for voice verification - Running command 'main'
+INFO - prototypical networks experiment for voice verification - Started run with ID "1"
