@@ -1,0 +1,23 @@
+{
+  "distance": "l2",
+  "downsampling": 4,
+  "episodes_per_epoch": 100,
+  "epochs": 100,
+  "final_test_episodes": 500,
+  "gamma": 0.5,
+  "k_test": 5,
+  "k_train": 5,
+  "learning_rate": 0.001,
+  "max_seq": 3,
+  "min_seq": 3,
+  "n_test": 5,
+  "n_train": 5,
+  "q_test": 5,
+  "q_train": 5,
+  "save_model": true,
+  "save_model_file": "min_seq_three_resnet18.pt",
+  "seed": 981241494,
+  "spectrogram": true,
+  "step_size": 20,
+  "test_episodes_per_epoch": 25
+}

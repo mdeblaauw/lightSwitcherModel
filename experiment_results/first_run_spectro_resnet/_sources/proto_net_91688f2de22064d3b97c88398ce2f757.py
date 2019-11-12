@@ -1,7 +1,5 @@
 
 import numpy as np
-
-import torchaudio
 import torch
 from torch import nn
 from torch.optim import Optimizer
@@ -24,12 +22,11 @@ ex = Experiment(EXPERIMENT_NAME)
 
 USE_CUDA = torch.cuda.is_available()
 device = torch.device("cuda" if USE_CUDA else "cpu")
-print('device that will be used is', device)
 
 class ProtoTrainer():
     def __init__(self):
         self.train_taskloader, self.test_taskloader = self.get_dataLoader()
-        self.model, self.spectro = self.get_model()
+        self.model = self.get_model()
         self.optimizer = self.get_optimizer()
         self.scheduler = self.get_scheduler()
         self.loss_fn = self.get_loss_fn()
@@ -40,21 +37,21 @@ class ProtoTrainer():
         train_taskloader = DataLoader(
             train_data,
             batch_sampler = NShotTaskSampler(train_data, episodes_per_epoch, n_train, k_train, q_train),
-            num_workers = 10
+            num_workers = 4
         )
 
         test_data = SequenceDataset(min_seq, max_seq, downsampling, 'test', spectrogram)
         test_taskloader = DataLoader(
             train_data,
             batch_sampler = NShotTaskSampler(test_data, test_episodes_per_epoch, n_test, k_test, q_test),
-            num_workers = 10
+            num_workers = 4
         )
         return(train_taskloader, test_taskloader)
 
     @ex.capture
     def get_model(self, spectrogram):
         if spectrogram:
-            return(ResNet18().to(device, dtype=torch.float), nn.Sequential(torchaudio.transforms.Spectrogram(n_fft=255, hop_length=160)).to(device))
+            return(ResNet18().to(device, dtype=torch.float))
         else:
             return(get_backbone(input="1d", kernel=32, pad=0).to(device, dtype=torch.float)) 
 
@@ -84,7 +81,7 @@ class ProtoTrainer():
                     x = x.to(device)
                     y = y.to(device)
 
-                    loss, y_pred = proto_net_episode(self.model, self.spectro,self.optimizer,self.loss_fn,x,y,n_train,k_train,q_train,distance,True)
+                    loss, y_pred = proto_net_episode(self.model,self.optimizer,self.loss_fn,x,y,n_train,k_train,q_train,distance,True)
 
                     train_acc = categorical_accuracy(y, y_pred)
                     train_accuracy.append(train_acc)
@@ -104,7 +101,7 @@ class ProtoTrainer():
                         x = x.to(device)
                         y = y.to(device)
 
-                        loss, y_pred = proto_net_episode(self.model, self.spectro,self.optimizer,self.loss_fn,x,y,n_test,k_test,q_test,distance,False)
+                        loss, y_pred = proto_net_episode(self.model,self.optimizer,self.loss_fn,x,y,n_test,k_test,q_test,distance,False)
 
                         test_acc = categorical_accuracy(y, y_pred)
                         test_accuracy.append(test_acc)
@@ -132,7 +129,7 @@ class ProtoTrainer():
                     x = x.to(device)
                     y = y.to(device)
                 
-                    loss, y_pred = proto_net_episode(self.model,self.spectro,self.optimizer,self.loss_fn,x,y,n_test,k_test,q_test,distance,False)
+                    loss, y_pred = proto_net_episode(self.model,self.optimizer,self.loss_fn,x,y,n_test,k_test,q_test,distance,False)
                     test_acc = categorical_accuracy(y, y_pred)
                     _run.log_scalar('final accuracy loop', test_acc)
                     final_test_accuracy.append(test_acc)

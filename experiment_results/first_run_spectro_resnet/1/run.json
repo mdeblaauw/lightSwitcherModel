@@ -1,0 +1,131 @@
+{
+  "artifacts": [],
+  "command": "main",
+  "experiment": {
+    "base_dir": "/home/ec2-user/lightSwitcherModel/experiments",
+    "dependencies": [
+      "numpy==1.17.2",
+      "sacred==0.8.0",
+      "torch==1.3.0"
+    ],
+    "mainfile": "proto_net.py",
+    "name": "prototypical networks experiment for voice verification",
+    "repositories": [
+      {
+        "commit": "109f0c2846ad030fd7adc708dcabe4b7fd07244d",
+        "dirty": true,
+        "url": "git@github.com:mdeblaauw/lightSwitcherModel.git"
+      },
+      {
+        "commit": "109f0c2846ad030fd7adc708dcabe4b7fd07244d",
+        "dirty": true,
+        "url": "git@github.com:mdeblaauw/lightSwitcherModel.git"
+      },
+      {
+        "commit": "109f0c2846ad030fd7adc708dcabe4b7fd07244d",
+        "dirty": true,
+        "url": "git@github.com:mdeblaauw/lightSwitcherModel.git"
+      },
+      {
+        "commit": "109f0c2846ad030fd7adc708dcabe4b7fd07244d",
+        "dirty": true,
+        "url": "git@github.com:mdeblaauw/lightSwitcherModel.git"
+      },
+      {
+        "commit": "109f0c2846ad030fd7adc708dcabe4b7fd07244d",
+        "dirty": true,
+        "url": "git@github.com:mdeblaauw/lightSwitcherModel.git"
+      },
+      {
+        "commit": "109f0c2846ad030fd7adc708dcabe4b7fd07244d",
+        "dirty": true,
+        "url": "git@github.com:mdeblaauw/lightSwitcherModel.git"
+      },
+      {
+        "commit": "109f0c2846ad030fd7adc708dcabe4b7fd07244d",
+        "dirty": true,
+        "url": "git@github.com:mdeblaauw/lightSwitcherModel.git"
+      }
+    ],
+    "sources": [
+      [
+        "../dataLoader/data_iterator.py",
+        "_sources/data_iterator_23fe3c9c0cb2087996d0f36dfe3cca26.py"
+      ],
+      [
+        "../dataLoader/task_sampler.py",
+        "_sources/task_sampler_2cb2c4a769be22380b2639c899bfc88a.py"
+      ],
+      [
+        "core.py",
+        "_sources/core_d02eb790685bdf88bf36d9a1cdb6d95d.py"
+      ],
+      [
+        "proto_net.py",
+        "_sources/proto_net_91688f2de22064d3b97c88398ce2f757.py"
+      ],
+      [
+        "../models/backbones/resnet_backbone.py",
+        "_sources/resnet_backbone_590199a90ad4e426867085f67b24fb17.py"
+      ],
+      [
+        "../models/backbones/standard_backbone.py",
+        "_sources/standard_backbone_0dc36aa134d84dcc20aab35e7148b0e1.py"
+      ],
+      [
+        "../models/protonet.py",
+        "_sources/protonet_e3bd0b5b9e665df5bfb6a96b84a8ce9c.py"
+      ]
+    ]
+  },
+  "heartbeat": "2019-11-11T10:17:59.089486",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz",
+    "gpus": {
+      "driver_version": "418.87.01",
+      "gpus": [
+        {
+          "model": "Tesla V100-SXM2-16GB",
+          "persistence_mode": true,
+          "total_memory": 16130
+        }
+      ]
+    },
+    "hostname": "ip-172-31-30-13",
+    "os": [
+      "Linux",
+      "Linux-4.14.146-93.123.amzn1.x86_64-x86_64-with-glibc2.3.4"
+    ],
+    "python_version": "3.6.8"
+  },
+  "meta": {
+    "command": "main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserve": false
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2019-11-11T10:10:14.334681",
+  "status": "INTERRUPTED",
+  "stop_time": "2019-11-11T10:17:59.091121"
+}

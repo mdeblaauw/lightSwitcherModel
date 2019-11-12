@@ -60,16 +60,7 @@ def compute_prototypes(support: torch.Tensor, k: int, n: int) -> torch.Tensor:
     class_prototypes = support.reshape(k, n, -1).mean(dim=1)
     return class_prototypes
 
-def compute_spectrograms(x, spectro):
-    tmpList = []
-    for i in range(x.shape[0]):
-        tmpList.append(spectro(x[i,:,:]))
-
-    # Stack adds a dim, so the shape is (batch, channel, freq_bins, frames) after doing STFT
-    spectograms = torch.stack(tmpList, dim=0)
-    return(spectograms)
-
-def proto_net_episode(model, spectro,optimiser,loss_fn,x,y,n_shot,k_way,q_queries,distance,train):
+def proto_net_episode(model,optimiser,loss_fn,x,y,n_shot,k_way,q_queries,distance,train):
     """Performs a single training episode for a Prototypical Network.
     # Arguments
         model: Prototypical Network to be trained.
@@ -93,10 +84,6 @@ def proto_net_episode(model, spectro,optimiser,loss_fn,x,y,n_shot,k_way,q_querie
     else:
         model.eval()
 
-    # transform audio files to spectrograms
-    if spectro:
-        x = compute_spectrograms(x, spectro)
-        
     # Embed all samples
     embeddings = model(x)
     # Samples are ordered by the NShotWrapper class as follows:

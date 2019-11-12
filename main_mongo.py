@@ -36,19 +36,19 @@ parser.add_argument("--n_test", default=5, type=int)
 parser.add_argument("--k_test", default=5, type=int)
 parser.add_argument("--q_test", default=5, type=int)
 parser.add_argument("--train_episodes", default=100, type=int)
-parser.add_argument("--test_episodes", default=100, type=int)
+parser.add_argument("--test_episodes", default=25, type=int)
 parser.add_argument("--final_episodes", default=500, type=int)
 parser.add_argument("--epochs", default=100, type=int)
 parser.add_argument("--lr", default=0.001, type=float)
 parser.add_argument("--step_size", default=20, type=int)
-parser.add_argument("--gamma", default=500, type=float)
+parser.add_argument("--gamma", default=0.5, type=float)
 parser.add_argument("--min_seq", default=1, type=int)
 parser.add_argument("--max_seq", default=3, type=int)
 parser.add_argument("--downsampling", default=4, type=int)
 parser.add_argument("--num_epochs", default=100, type=int)
 parser.add_argument("--save_model", help="saves the model", action="store_true")
 parser.add_argument("--file_name", default="model.pt", help="name of the saved model")
-parser.add_argument("--sequence", help="decides which model to run", action="store_true")
+parser.add_argument("--spectrogram", help="decides which model to run", action="store_true")
 
 args = parser.parse_args()
 
@@ -72,4 +72,4 @@ r = ex.run(config_updates={
     'downsampling':args.downsampling,
     'save_model':args.save_model,
     'save_model_file':args.file_name,
-    'seq':args.sequence})
+    'spectrogram':args.spectrogram})
