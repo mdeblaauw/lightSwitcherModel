@@ -1,0 +1,497 @@
+INFO - prototypical networks experiment for voice verification - Running command 'main'
+INFO - prototypical networks experiment for voice verification - Started run with ID "7"
+
+  0%|          | 0/1092009 [00:00<?, ?it/s]
+  1%|1         | 12022/1092009 [00:00<00:08, 120198.62it/s]
+  2%|2         | 25018/1092009 [00:00<00:08, 122959.98it/s]
+  4%|3         | 38379/1092009 [00:00<00:08, 125958.96it/s]
+  5%|4         | 52223/1092009 [00:00<00:08, 129445.90it/s]
+  6%|6         | 66866/1092009 [00:00<00:07, 134111.59it/s]
+  7%|7         | 80711/1092009 [00:00<00:07, 135383.10it/s]
+  9%|8         | 95663/1092009 [00:00<00:07, 139334.21it/s]
+ 10%|#         | 109555/1092009 [00:00<00:07, 139208.23it/s]
+ 11%|#1        | 123841/1092009 [00:00<00:06, 140279.61it/s]
+ 13%|#2        | 138457/1092009 [00:01<00:06, 141947.61it/s]
+ 14%|#4        | 153397/1092009 [00:01<00:06, 144098.45it/s]
+ 15%|#5        | 168467/1092009 [00:01<00:06, 146016.71it/s]
+ 17%|#6        | 183060/1092009 [00:01<00:06, 145984.04it/s]
+ 18%|#8        | 197655/1092009 [00:01<00:06, 145963.95it/s]
+ 19%|#9        | 212407/1092009 [00:01<00:06, 146427.25it/s]
+ 21%|##        | 227002/1092009 [00:01<00:05, 144624.70it/s]
+ 22%|##2       | 241437/1092009 [00:01<00:05, 143809.49it/s]
+ 23%|##3       | 255800/1092009 [00:01<00:05, 143680.45it/s]
+ 25%|##4       | 270317/1092009 [00:01<00:05, 144123.63it/s]
+ 26%|##6       | 284721/1092009 [00:02<00:05, 144095.68it/s]
+ 27%|##7       | 299229/1092009 [00:02<00:05, 144382.11it/s]
+ 29%|##8       | 313737/1092009 [00:02<00:05, 144582.57it/s]
+ 30%|###       | 328636/1092009 [00:02<00:05, 145874.35it/s]
+ 31%|###1      | 343225/1092009 [00:02<00:05, 143883.03it/s]
+ 33%|###2      | 357720/1092009 [00:02<00:05, 144201.30it/s]
+ 34%|###4      | 372611/1092009 [00:02<00:04, 145575.57it/s]
+ 35%|###5      | 387282/1092009 [00:02<00:04, 145912.53it/s]
+ 37%|###6      | 402045/1092009 [00:02<00:04, 146414.88it/s]
+ 38%|###8      | 416691/1092009 [00:02<00:04, 144050.15it/s]
+ 39%|###9      | 431303/1092009 [00:03<00:04, 144664.35it/s]
+ 41%|####      | 445856/1092009 [00:03<00:04, 144917.53it/s]
+ 42%|####2     | 460354/1092009 [00:03<00:04, 144427.90it/s]
+ 43%|####3     | 474802/1092009 [00:03<00:04, 144116.17it/s]
+ 45%|####4     | 489383/1092009 [00:03<00:04, 144618.36it/s]
+ 46%|####6     | 504070/1092009 [00:03<00:04, 145285.69it/s]
+ 47%|####7     | 518602/1092009 [00:03<00:03, 144585.78it/s]
+ 49%|####8     | 533642/1092009 [00:03<00:03, 146281.31it/s]
+ 50%|#####     | 548352/1092009 [00:03<00:03, 146524.12it/s]
+ 52%|#####1    | 563103/1092009 [00:03<00:03, 146817.39it/s]
+ 53%|#####2    | 577789/1092009 [00:04<00:03, 146204.57it/s]
+ 54%|#####4    | 592413/1092009 [00:04<00:03, 146146.78it/s]
+ 56%|#####5    | 607030/1092009 [00:04<00:03, 145825.48it/s]
+ 57%|#####6    | 621702/1092009 [00:04<00:03, 146092.11it/s]
+ 58%|#####8    | 636364/1092009 [00:04<00:03, 146250.01it/s]
+ 60%|#####9    | 651267/1092009 [00:04<00:02, 147072.16it/s]
+ 61%|######    | 665976/1092009 [00:04<00:02, 146874.19it/s]
+ 62%|######2   | 680665/1092009 [00:04<00:02, 146864.59it/s]
+ 64%|######3   | 695589/1092009 [00:04<00:02, 147559.88it/s]
+ 65%|######5   | 710347/1092009 [00:04<00:02, 147147.22it/s]
+ 66%|######6   | 725063/1092009 [00:05<00:02, 145100.75it/s]
+ 68%|######7   | 739663/1092009 [00:05<00:02, 145363.71it/s]
+ 69%|######9   | 754205/1092009 [00:05<00:02, 145259.31it/s]
+ 70%|#######   | 768808/1092009 [00:05<00:02, 145482.03it/s]
+ 72%|#######1  | 783423/1092009 [00:05<00:02, 145680.99it/s]
+ 73%|#######3  | 798157/1092009 [00:05<00:02, 146173.76it/s]
+ 74%|#######4  | 812777/1092009 [00:05<00:01, 145683.03it/s]
+ 76%|#######5  | 827504/1092009 [00:05<00:01, 146131.39it/s]
+ 77%|#######7  | 842119/1092009 [00:05<00:01, 144150.07it/s]
+ 78%|#######8  | 856613/1092009 [00:05<00:01, 144385.46it/s]
+ 80%|#######9  | 871134/1092009 [00:06<00:01, 144613.75it/s]
+ 81%|########1 | 885748/1092009 [00:06<00:01, 145063.36it/s]
+ 82%|########2 | 900271/1092009 [00:06<00:01, 145110.04it/s]
+ 84%|########3 | 914842/1092009 [00:06<00:01, 145286.34it/s]
+ 85%|########5 | 929373/1092009 [00:06<00:01, 145152.71it/s]
+ 86%|########6 | 944035/1092009 [00:06<00:01, 145589.74it/s]
+ 88%|########7 | 958596/1092009 [00:06<00:00, 145575.35it/s]
+ 89%|########9 | 973155/1092009 [00:06<00:00, 144555.02it/s]
+ 90%|######### | 987927/1092009 [00:06<00:00, 145482.74it/s]
+ 92%|#########1| 1002572/1092009 [00:06<00:00, 145770.47it/s]
+ 93%|#########3| 1017691/1092009 [00:07<00:00, 147353.39it/s]
+ 95%|#########4| 1032432/1092009 [00:07<00:00, 145957.67it/s]
+ 96%|#########5| 1047184/1092009 [00:07<00:00, 146415.54it/s]
+ 97%|#########7| 1062076/1092009 [00:07<00:00, 147156.26it/s]
+ 99%|#########8| 1076797/1092009 [00:07<00:00, 145993.17it/s]
+100%|#########9| 1091701/1092009 [00:07<00:00, 146893.79it/s]
+100%|##########| 1092009/1092009 [00:07<00:00, 144722.22it/s]
+
+  0%|          | 0/148642 [00:00<?, ?it/s]
+  8%|8         | 12376/148642 [00:00<00:01, 123753.33it/s]
+ 17%|#6        | 25032/148642 [00:00<00:00, 124572.56it/s]
+ 26%|##5       | 38456/148642 [00:00<00:00, 127320.80it/s]
+ 36%|###5      | 52855/148642 [00:00<00:00, 131895.81it/s]
+ 45%|####5     | 66930/148642 [00:00<00:00, 134431.60it/s]
+ 55%|#####4    | 81273/148642 [00:00<00:00, 137009.58it/s]
+ 65%|######4   | 95911/148642 [00:00<00:00, 139691.55it/s]
+ 74%|#######3  | 109890/148642 [00:00<00:00, 139713.12it/s]
+ 83%|########3 | 124056/148642 [00:00<00:00, 140287.21it/s]
+ 93%|#########3| 138414/148642 [00:01<00:00, 141257.83it/s]
+100%|##########| 148642/148642 [00:01<00:00, 139053.07it/s]
+Epochs: 1
+Train accuracy: 0.3139999999999999
+Test accuracy: 0.3248000000000001
+Loss train: 3.1837884414196016
+Epochs: 2
+Train accuracy: 0.36599999999999994
+Test accuracy: 0.36640000000000017
+Loss train: 1.5034257805347442
+Epochs: 3
+Train accuracy: 0.43199999999999983
+Test accuracy: 0.4640000000000001
+Loss train: 1.3805888152122499
+Epochs: 4
+Train accuracy: 0.4271999999999999
+Test accuracy: 0.47839999999999994
+Loss train: 1.3916561007499695
+Epochs: 5
+Train accuracy: 0.4715999999999998
+Test accuracy: 0.3904000000000001
+Loss train: 1.2381747859716414
+Epochs: 6
+Train accuracy: 0.5256000000000002
+Test accuracy: 0.4336
+Loss train: 1.1569052267074584
+Epochs: 7
+Train accuracy: 0.514
+Test accuracy: 0.45600000000000007
+Loss train: 1.1404799860715866
+Epochs: 8
+Train accuracy: 0.5284000000000001
+Test accuracy: 0.4768
+Loss train: 1.1080941081047058
+Epochs: 9
+Train accuracy: 0.5400000000000001
+Test accuracy: 0.4896000000000001
+Loss train: 1.0903577852249144
+Epochs: 10
+Train accuracy: 0.5448000000000001
+Test accuracy: 0.47680000000000006
+Loss train: 1.0973503375053406
+Epochs: 11
+Train accuracy: 0.5528000000000002
+Test accuracy: 0.46880000000000005
+Loss train: 1.0133858013153076
+Epochs: 12
+Train accuracy: 0.582
+Test accuracy: 0.5551999999999999
+Loss train: 1.0175980353355407
+Epochs: 13
+Train accuracy: 0.6192
+Test accuracy: 0.5168
+Loss train: 0.9882299864292144
+Epochs: 14
+Train accuracy: 0.6016000000000001
+Test accuracy: 0.5055999999999999
+Loss train: 0.9966277354955673
+Epochs: 15
+Train accuracy: 0.6320000000000001
+Test accuracy: 0.5488000000000001
+Loss train: 0.9252191656827926
+Epochs: 16
+Train accuracy: 0.6188000000000003
+Test accuracy: 0.48960000000000004
+Loss train: 0.9536044442653656
+Epochs: 17
+Train accuracy: 0.6112000000000001
+Test accuracy: 0.49920000000000003
+Loss train: 0.9735204595327377
+Epochs: 18
+Train accuracy: 0.654
+Test accuracy: 0.4752
+Loss train: 0.8751829352974891
+Epochs: 19
+Train accuracy: 0.6456000000000001
+Test accuracy: 0.5456
+Loss train: 0.9139274182915688
+Epochs: 20
+Train accuracy: 0.6104000000000002
+Test accuracy: 0.5088000000000001
+Loss train: 0.9852828907966614
+Epochs: 21
+Train accuracy: 0.6864000000000003
+Test accuracy: 0.5232000000000001
+Loss train: 0.7908627650141716
+Epochs: 22
+Train accuracy: 0.6951999999999999
+Test accuracy: 0.5344000000000001
+Loss train: 0.7864223304390907
+Epochs: 23
+Train accuracy: 0.7016000000000002
+Test accuracy: 0.5296000000000001
+Loss train: 0.7983383509516716
+Epochs: 24
+Train accuracy: 0.6951999999999999
+Test accuracy: 0.5472
+Loss train: 0.7748665490746498
+Epochs: 25
+Train accuracy: 0.7300000000000004
+Test accuracy: 0.5152000000000001
+Loss train: 0.7124506710469722
+Epochs: 26
+Train accuracy: 0.7472000000000004
+Test accuracy: 0.5040000000000001
+Loss train: 0.6939950267970562
+Epochs: 27
+Train accuracy: 0.7083999999999999
+Test accuracy: 0.5136
+Loss train: 0.7561047251522541
+Epochs: 28
+Train accuracy: 0.7096000000000002
+Test accuracy: 0.5696000000000001
+Loss train: 0.7402335058152676
+Epochs: 29
+Train accuracy: 0.7320000000000002
+Test accuracy: 0.5376000000000002
+Loss train: 0.7009539791941642
+Epochs: 30
+Train accuracy: 0.7376000000000005
+Test accuracy: 0.5216
+Loss train: 0.6959526523947716
+Epochs: 31
+Train accuracy: 0.7204000000000002
+Test accuracy: 0.5344
+Loss train: 0.715482911914587
+Epochs: 32
+Train accuracy: 0.7239999999999999
+Test accuracy: 0.5312
+Loss train: 0.7047594256699086
+Epochs: 33
+Train accuracy: 0.7188
+Test accuracy: 0.5216
+Loss train: 0.7304131393134594
+Epochs: 34
+Train accuracy: 0.7480000000000002
+Test accuracy: 0.5551999999999998
+Loss train: 0.6806476825475692
+Epochs: 35
+Train accuracy: 0.7535999999999997
+Test accuracy: 0.5456
+Loss train: 0.6666028574109077
+Epochs: 36
+Train accuracy: 0.7276000000000004
+Test accuracy: 0.5728
+Loss train: 0.6937353450059891
+Epochs: 37
+Train accuracy: 0.7363999999999998
+Test accuracy: 0.5904
+Loss train: 0.7295697635412216
+Epochs: 38
+Train accuracy: 0.7572000000000005
+Test accuracy: 0.5856000000000001
+Loss train: 0.6753843751549721
+Epochs: 39
+Train accuracy: 0.7224
+Test accuracy: 0.5391999999999999
+Loss train: 0.7109649899601936
+Epochs: 40
+Train accuracy: 0.7272000000000004
+Test accuracy: 0.536
+Loss train: 0.7149004910886287
+Epochs: 41
+Train accuracy: 0.7668
+Test accuracy: 0.5136
+Loss train: 0.6129897460341454
+Epochs: 42
+Train accuracy: 0.7752000000000001
+Test accuracy: 0.5600000000000002
+Loss train: 0.5824570913612842
+Epochs: 43
+Train accuracy: 0.7784000000000002
+Test accuracy: 0.5728000000000001
+Loss train: 0.5843272699415684
+Epochs: 44
+Train accuracy: 0.7731999999999998
+Test accuracy: 0.5392
+Loss train: 0.6163896092772484
+Epochs: 45
+Train accuracy: 0.7744000000000005
+Test accuracy: 0.5039999999999999
+Loss train: 0.6085674551129341
+Epochs: 46
+Train accuracy: 0.7776000000000003
+Test accuracy: 0.6032
+Loss train: 0.6047182431817055
+Epochs: 47
+Train accuracy: 0.7876000000000001
+Test accuracy: 0.5776
+Loss train: 0.6089784176647663
+Epochs: 48
+Train accuracy: 0.8036000000000004
+Test accuracy: 0.5856
+Loss train: 0.5545761807262898
+Epochs: 49
+Train accuracy: 0.8052000000000002
+Test accuracy: 0.5888
+Loss train: 0.5452415317296981
+Epochs: 50
+Train accuracy: 0.7532000000000001
+Test accuracy: 0.5920000000000001
+Loss train: 0.6473424740135669
+Epochs: 51
+Train accuracy: 0.7864000000000005
+Test accuracy: 0.6064
+Loss train: 0.5765095520019531
+Epochs: 52
+Train accuracy: 0.7872000000000001
+Test accuracy: 0.5968
+Loss train: 0.5878512386977672
+Epochs: 53
+Train accuracy: 0.7831999999999999
+Test accuracy: 0.5935999999999999
+Loss train: 0.6011676254868508
+Epochs: 54
+Train accuracy: 0.7856000000000007
+Test accuracy: 0.5312000000000001
+Loss train: 0.5813198450952768
+Epochs: 55
+Train accuracy: 0.7820000000000001
+Test accuracy: 0.6480000000000001
+Loss train: 0.5673520166426897
+Epochs: 56
+Train accuracy: 0.7920000000000003
+Test accuracy: 0.5888000000000001
+Loss train: 0.5541757053136825
+Epochs: 57
+Train accuracy: 0.7968000000000005
+Test accuracy: 0.6080000000000001
+Loss train: 0.5721529984474182
+Epochs: 58
+Train accuracy: 0.7848000000000002
+Test accuracy: 0.5200000000000001
+Loss train: 0.5668831187486648
+Epochs: 59
+Train accuracy: 0.8024000000000001
+Test accuracy: 0.6576
+Loss train: 0.549539349079132
+Epochs: 60
+Train accuracy: 0.7888000000000001
+Test accuracy: 0.5456000000000001
+Loss train: 0.5798958791792392
+Epochs: 61
+Train accuracy: 0.7900000000000001
+Test accuracy: 0.5648
+Loss train: 0.5800559468567371
+Epochs: 62
+Train accuracy: 0.8088000000000004
+Test accuracy: 0.6032000000000002
+Loss train: 0.4950309379398823
+Epochs: 63
+Train accuracy: 0.8140000000000002
+Test accuracy: 0.6176
+Loss train: 0.4893609694391489
+Epochs: 64
+Train accuracy: 0.8188000000000006
+Test accuracy: 0.6032000000000001
+Loss train: 0.48492433547973635
+Epochs: 65
+Train accuracy: 0.8120000000000002
+Test accuracy: 0.6112
+Loss train: 0.5151712937653065
+Epochs: 66
+Train accuracy: 0.8004000000000001
+Test accuracy: 0.5871999999999999
+Loss train: 0.5426688422262669
+Epochs: 67
+Train accuracy: 0.8168000000000005
+Test accuracy: 0.6112000000000001
+Loss train: 0.5059775526076555
+Epochs: 68
+Train accuracy: 0.8136000000000007
+Test accuracy: 0.5711999999999999
+Loss train: 0.511566074565053
+Epochs: 69
+Train accuracy: 0.8080000000000005
+Test accuracy: 0.5984
+Loss train: 0.5233286279439926
+Epochs: 70
+Train accuracy: 0.8172000000000004
+Test accuracy: 0.6288
+Loss train: 0.4876367950439453
+Epochs: 71
+Train accuracy: 0.8000000000000003
+Test accuracy: 0.6160000000000002
+Loss train: 0.542063946351409
+Epochs: 72
+Train accuracy: 0.8200000000000002
+Test accuracy: 0.5456000000000001
+Loss train: 0.5032720439136028
+Epochs: 73
+Train accuracy: 0.8248000000000002
+Test accuracy: 0.5712
+Loss train: 0.4900922064483166
+Epochs: 74
+Train accuracy: 0.8308000000000005
+Test accuracy: 0.6176000000000001
+Loss train: 0.47585978418588637
+Epochs: 75
+Train accuracy: 0.8124000000000008
+Test accuracy: 0.5888
+Loss train: 0.4888161697238684
+Epochs: 76
+Train accuracy: 0.8176000000000004
+Test accuracy: 0.6016
+Loss train: 0.5063138928264379
+Epochs: 77
+Train accuracy: 0.8288000000000001
+Test accuracy: 0.6176000000000001
+Loss train: 0.491405448615551
+Epochs: 78
+Train accuracy: 0.8240000000000005
+Test accuracy: 0.6511999999999999
+Loss train: 0.47890472441911697
+Epochs: 79
+Train accuracy: 0.8236000000000003
+Test accuracy: 0.5840000000000001
+Loss train: 0.48336717545986174
+Epochs: 80
+Train accuracy: 0.8120000000000006
+Test accuracy: 0.5536000000000002
+Loss train: 0.5013274163007736
+Epochs: 81
+Train accuracy: 0.8296000000000001
+Test accuracy: 0.5808
+Loss train: 0.4714629575610161
+Epochs: 82
+Train accuracy: 0.8348000000000002
+Test accuracy: 0.5695999999999999
+Loss train: 0.4624339932203293
+Epochs: 83
+Train accuracy: 0.8400000000000003
+Test accuracy: 0.5936
+Loss train: 0.4599520278722048
+Epochs: 84
+Train accuracy: 0.8308000000000004
+Test accuracy: 0.6304000000000001
+Loss train: 0.46691268421709536
+Epochs: 85
+Train accuracy: 0.8220000000000001
+Test accuracy: 0.6720000000000002
+Loss train: 0.4834889142215252
+Epochs: 86
+Train accuracy: 0.8256
+Test accuracy: 0.5952000000000001
+Loss train: 0.45707839192822575
+Epochs: 87
+Train accuracy: 0.8504
+Test accuracy: 0.6112
+Loss train: 0.41607774153351784
+Epochs: 88
+Train accuracy: 0.8376000000000003
+Test accuracy: 0.6576000000000002
+Loss train: 0.4430625407397747
+Epochs: 89
+Train accuracy: 0.8300000000000003
+Test accuracy: 0.6607999999999998
+Loss train: 0.4551877959817648
+Epochs: 90
+Train accuracy: 0.8440000000000003
+Test accuracy: 0.6544
+Loss train: 0.4335753646120429
+Epochs: 91
+Train accuracy: 0.8496000000000004
+Test accuracy: 0.5888
+Loss train: 0.4032817594707012
+Epochs: 92
+Train accuracy: 0.8264000000000002
+Test accuracy: 0.6576
+Loss train: 0.47628585442900656
+Epochs: 93
+Train accuracy: 0.8300000000000007
+Test accuracy: 0.6095999999999999
+Loss train: 0.4542253316193819
+Epochs: 94
+Train accuracy: 0.8384
+Test accuracy: 0.6784000000000002
+Loss train: 0.4280969483405352
+Epochs: 95
+Train accuracy: 0.8304000000000005
+Test accuracy: 0.6288000000000001
+Loss train: 0.46043493956327436
+Epochs: 96
+Train accuracy: 0.8535999999999998
+Test accuracy: 0.6335999999999999
+Loss train: 0.39594184175133706
+Epochs: 97
+Train accuracy: 0.8216000000000001
+Test accuracy: 0.5712000000000002
+Loss train: 0.46670990347862246
+Epochs: 98
+Train accuracy: 0.8331999999999999
+Test accuracy: 0.5824
+Loss train: 0.4594452205300331
+Epochs: 99
+Train accuracy: 0.8392000000000003
+Test accuracy: 0.5279999999999999
+Loss train: 0.43086094219237564
+Epochs: 100
+Train accuracy: 0.8380000000000004
+Test accuracy: 0.6240000000000001
+Loss train: 0.46489611215889454
+final mean accuracy: 0.58576
+final std accuracy: 0.12652439448580657
+final CI95: 0.01109035215778471
+INFO - prototypical networks experiment for voice verification - Completed after 1:08:59
